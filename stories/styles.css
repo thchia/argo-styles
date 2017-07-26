@@ -4,6 +4,6 @@
 }
 
 .input-inverted.error input {
-  border: solid 1px red !important;
-  color: red !important;
+  border: solid 1px #bd0000 !important;
+  color: #ff4a4a !important;
 }

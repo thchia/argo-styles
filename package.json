@@ -15,7 +15,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "upload": "s3-cli put --config=.s3cfg --region=ap-southeast-1 --acl-public semantic/dist/semantic.min.css s3://argomi-styles/argomi.min.css"
   },
   "devDependencies": {
     "@storybook/react": "^3.1.9"

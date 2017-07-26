@@ -1,0 +1,9 @@
+.input-inverted input {
+  background: black !important;
+  color: white !important;
+}
+
+.input-inverted.error input {
+  border: solid 1px red !important;
+  color: red !important;
+}

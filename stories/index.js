@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { Button, Form, Input, Message, Segment } from 'semantic-ui-react'
+import { Button, Form, Input, Menu, Message, Segment } from 'semantic-ui-react'
 
 import './styles.css'
 import '../semantic/dist/semantic.min.css'
@@ -114,3 +114,29 @@ storiesOf('Form', module)
       </Form>
     </Segment>
   </div>)
+
+storiesOf('Menu', module)
+  .add('normal', () => <div style={{ borderBottom: 'solid 1px lightgrey', padding: '5px' }}>
+    <Menu secondary>
+      <Menu.Item active>Item 1</Menu.Item>
+      <Menu.Item>Item 2</Menu.Item>
+      <Menu.Item>Item 3</Menu.Item>
+      <Menu.Menu position='right'>
+        <Menu.Item><Input /></Menu.Item>
+        <Menu.Item>Logout</Menu.Item>
+      </Menu.Menu>
+    </Menu>
+  </div>)
+  .add('inverted', () => <Segment inverted>
+    <div style={{ borderBottom: 'solid 1px lightgrey', padding: '5px' }}>
+      <Menu secondary inverted>
+        <Menu.Item active>Item 1</Menu.Item>
+        <Menu.Item>Item 2</Menu.Item>
+        <Menu.Item>Item 3</Menu.Item>
+        <Menu.Menu position='right'>
+          <Menu.Item><Input className='input-inverted' inverted /></Menu.Item>
+          <Menu.Item>Logout</Menu.Item>
+        </Menu.Menu>
+      </Menu>
+    </div>
+  </Segment>)

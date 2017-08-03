@@ -116,27 +116,39 @@ storiesOf('Form', module)
   </div>)
 
 storiesOf('Menu', module)
-  .add('normal', () => <div style={{ borderBottom: 'solid 1px lightgrey', padding: '5px' }}>
+  .add('secondary normal', () => <div style={{ borderBottom: 'solid 1px lightgrey', padding: '5px' }}>
     <Menu secondary>
-      <Menu.Item active>Item 1</Menu.Item>
-      <Menu.Item>Item 2</Menu.Item>
-      <Menu.Item>Item 3</Menu.Item>
+      <Menu.Item as ='a' active>Item 1</Menu.Item>
+      <Menu.Item as ='a'>Item 2</Menu.Item>
+      <Menu.Item as ='a'>Item 3</Menu.Item>
       <Menu.Menu position='right'>
-        <Menu.Item><Input /></Menu.Item>
-        <Menu.Item>Logout</Menu.Item>
+        <Menu.Item as='a'><Input /></Menu.Item>
+        <Menu.Item as='a'>Logout</Menu.Item>
       </Menu.Menu>
     </Menu>
   </div>)
-  .add('inverted', () => <Segment inverted>
+  .add('secondary inverted', () => <Segment inverted>
     <div style={{ borderBottom: 'solid 1px lightgrey', padding: '5px' }}>
       <Menu secondary inverted>
-        <Menu.Item active>Item 1</Menu.Item>
-        <Menu.Item>Item 2</Menu.Item>
-        <Menu.Item>Item 3</Menu.Item>
+        <Menu.Item as ='a' active>Item 1</Menu.Item>
+        <Menu.Item as ='a'>Item 2</Menu.Item>
+        <Menu.Item as ='a'>Item 3</Menu.Item>
         <Menu.Menu position='right'>
           <Menu.Item><Input className='input-inverted' inverted /></Menu.Item>
           <Menu.Item>Logout</Menu.Item>
         </Menu.Menu>
       </Menu>
     </div>
+  </Segment>)
+  .add('pointing secondary normal', () => <Segment>
+    <Menu pointing secondary>
+      <Menu.Item as='a' active>Item 1</Menu.Item>
+      <Menu.Item as='a'>Item 2</Menu.Item>
+    </Menu>
+</Segment>)
+  .add('pointing secondary inverted', () => <Segment inverted>
+    <Menu pointing secondary inverted>
+      <Menu.Item as ='a' active>Item 1</Menu.Item>
+      <Menu.Item as='a' >Item 2</Menu.Item>
+    </Menu>
   </Segment>)

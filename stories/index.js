@@ -4,7 +4,7 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { Button, Form, Input, Menu, Message, Segment } from 'semantic-ui-react'
+import { Button, Dropdown, Form, Grid, Input, Menu, Message, Segment } from 'semantic-ui-react'
 
 import './styles.css'
 import '../semantic/dist/semantic.min.css'
@@ -151,4 +151,41 @@ storiesOf('Menu', module)
       <Menu.Item as ='a' active>Item 1</Menu.Item>
       <Menu.Item as='a' >Item 2</Menu.Item>
     </Menu>
-  </Segment>)
+</Segment>)
+
+storiesOf('Dropdown', module)
+  .add('normal', () => <Segment>
+    <Dropdown search selection options={[]} />
+</Segment>)
+
+storiesOf('Form with Dropdown', module)
+  .add('normal', () => <Segment>
+    <Form>
+      <Form.Dropdown search selection />
+      <Form.Input />
+    </Form>
+</Segment>)
+  .add('mini', () => <Segment>
+    <Form size='mini'>
+      <Form.Dropdown search selection />
+      <Form.Input />
+    </Form>
+</Segment>)
+
+storiesOf('Grid', module)
+  .add('compact', () => <Segment>
+    <Grid>
+      <Grid.Row>
+        <Grid.Column>Value</Grid.Column>
+        <Grid.Column>Value</Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column>Value</Grid.Column>
+        <Grid.Column>Value</Grid.Column>
+      </Grid.Row>
+      <Grid.Row>
+        <Grid.Column>Value</Grid.Column>
+        <Grid.Column>Value</Grid.Column>
+      </Grid.Row>
+    </Grid>
+</Segment>)

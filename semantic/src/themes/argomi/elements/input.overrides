@@ -4,9 +4,18 @@
 
 .ui.transparent.input {
   background-color: @black;
-  padding: (@verticalPadding - @lineHeightOffset) @horizontalPadding;
   border: @borderWidth solid @borderColor;
   border-radius: @defaultBorderRadius;
+}
+
+.ui.transparent.labeled .ui.label {
+  margin-right: 5px;
+  background-color: @darkGrey;
+  color: @white;
+}
+
+.ui.transparent.input:not(.labeled) {
+  padding: (@verticalPadding - @lineHeightOffset) @horizontalPadding;
 }
 
 .ui.form {

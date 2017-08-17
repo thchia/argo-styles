@@ -4,9 +4,9 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { Button, Checkbox, Dropdown, Form, Grid, Input, Menu, Message, Segment } from 'semantic-ui-react'
+import { Button, Checkbox, Dropdown, Form, Grid, Input, Menu, Message, Segment, TextArea } from 'semantic-ui-react'
 
-import './styles.css'
+// import './styles.css'
 import '../semantic/dist/semantic.min.css'
 
 const error = true
@@ -81,13 +81,16 @@ storiesOf('Form', module)
         <Input placeholder='Placeholder' />
       </Form.Field>
       <Form.Field>
-        <Input placeholder='Placeholder' />
+        <Input label='SGD' placeholder='Placeholder' />
       </Form.Field>
       <Form.Field>
         <Dropdown placeholder='Placeholder' search selection options={sampleDropdownOptions} />
       </Form.Field>
       <Form.Field>
         <Checkbox label='Checkbox' />
+      </Form.Field>
+      <Form.Field>
+        <TextArea placeholder='Placeholder' />
       </Form.Field>
     </Form>
   </div>)
@@ -105,6 +108,9 @@ storiesOf('Form', module)
       <Form.Field error>
         <Checkbox label='Checkbox' />
       </Form.Field>
+      <Form.Field error>
+        <TextArea placeholder='Placeholder' />
+      </Form.Field>
     </Form>
   </div>)
   .add('inverted', () => <div style={{ width: '300px' }}>
@@ -114,13 +120,16 @@ storiesOf('Form', module)
           <Input transparent placeholder='Placeholder' />
         </Form.Field>
         <Form.Field>
-          <Input transparent placeholder='Placeholder' />
+          <Input label='SGD' transparent placeholder='Placeholder' />
         </Form.Field>
         <Form.Field>
           <Dropdown className='inverted' placeholder='Placeholder' search selection options={sampleDropdownOptions} />
         </Form.Field>
         <Form.Field>
           <Checkbox className='inverted' label='Checkbox' />
+        </Form.Field>
+        <Form.Field>
+          <TextArea style={{ backgroundColor: '#1b1c1d', color: 'white' }} placeholder='Placeholder' />
         </Form.Field>
       </Form>
     </Segment>
@@ -132,13 +141,16 @@ storiesOf('Form', module)
           <Input transparent placeholder='Placeholder' />
         </Form.Field>
         <Form.Field error>
-          <Input transparent placeholder='Placeholder' />
+          <Input label='SGD' transparent placeholder='Placeholder' />
         </Form.Field>
         <Form.Field>
           <Dropdown className='inverted error' placeholder='Placeholder' search selection options={sampleDropdownOptions} />
         </Form.Field>
         <Form.Field error>
           <Checkbox className='inverted' label='Checkbox' />
+        </Form.Field>
+        <Form.Field error>
+          <TextArea style={{ borderColor: 'red', backgroundColor: '#1b1c1d' }}  placeholder='Placeholder' />
         </Form.Field>
       </Form>
     </Segment>

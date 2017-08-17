@@ -19,8 +19,13 @@
 .ui.checkbox.inverted label:after,
 .ui.checkbox.inverted .box:before,
 .ui.checkbox.inverted .box:after {
-  background: @invertedSelectionBackground;
+  background: @black;
   color: @white;
+}
+
+.ui.checkbox input:focus~.box:before,
+.ui.checkbox input:focus~label:before {
+  background: @black;
 }
 
 /* Checked */
@@ -31,8 +36,9 @@
 /* Inverted Checked */
 .ui.checkbox.inverted input:checked ~ .box:after,
 .ui.checkbox.inverted input:checked ~ label:after {
+  border-radius: @3px;
   content: '\e800';
-  background: @invertedSelectionBackground;
+  background: @black;
   color: @white;
 }
 

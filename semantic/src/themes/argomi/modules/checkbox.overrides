@@ -14,11 +14,26 @@
 .ui.checkbox .box:after {
   font-family: 'Checkbox';
 }
+/* Inverted Checkmark */
+.ui.checkbox.inverted label:before,
+.ui.checkbox.inverted label:after,
+.ui.checkbox.inverted .box:before,
+.ui.checkbox.inverted .box:after {
+  background: @invertedSelectionBackground;
+  color: @white;
+}
 
 /* Checked */
 .ui.checkbox input:checked ~ .box:after,
 .ui.checkbox input:checked ~ label:after {
   content: '\e800';
+}
+/* Inverted Checked */
+.ui.checkbox.inverted input:checked ~ .box:after,
+.ui.checkbox.inverted input:checked ~ label:after {
+  content: '\e800';
+  background: @invertedSelectionBackground;
+  color: @white;
 }
 
 /* Indeterminate */

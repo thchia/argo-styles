@@ -4,12 +4,17 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
-import { Button, Dropdown, Form, Grid, Input, Menu, Message, Segment } from 'semantic-ui-react'
+import { Button, Checkbox, Dropdown, Form, Grid, Input, Menu, Message, Segment } from 'semantic-ui-react'
 
 import './styles.css'
 import '../semantic/dist/semantic.min.css'
 
 const error = true
+const sampleDropdownOptions = [
+  { key: '1', text: 'First', value: 'First' },
+  { key: '2', text: 'Second', value: 'Second' },
+  { key: '3', text: 'Third', value: 'Third' }
+]
 
 storiesOf('Button', module)
   .add('green', () => <div>
@@ -73,31 +78,49 @@ storiesOf('Form', module)
   .add('normal', () => <div style={{ width: '300px' }}>
     <Form>
       <Form.Field>
-        <input placeholder='Placeholder' />
+        <Input placeholder='Placeholder' />
       </Form.Field>
       <Form.Field>
-        <input placeholder='Placeholder' />
+        <Input placeholder='Placeholder' />
+      </Form.Field>
+      <Form.Field>
+        <Dropdown placeholder='Placeholder' search selection options={sampleDropdownOptions} />
+      </Form.Field>
+      <Form.Field>
+        <Checkbox label='Checkbox' />
       </Form.Field>
     </Form>
   </div>)
   .add('normal error', () => <div style={{ width: '300px' }}>
     <Form>
       <Form.Field error>
-        <input placeholder='Placeholder' />
+        <Input placeholder='Placeholder' />
       </Form.Field>
       <Form.Field error>
-        <input placeholder='Placeholder' />
+        <Input placeholder='Placeholder' />
+      </Form.Field>
+      <Form.Field error>
+        <Dropdown placeholder='Placeholder' search selection options={sampleDropdownOptions} />
+      </Form.Field>
+      <Form.Field error>
+        <Checkbox label='Checkbox' />
       </Form.Field>
     </Form>
   </div>)
   .add('inverted', () => <div style={{ width: '300px' }}>
     <Segment inverted>
       <Form inverted>
-        <Form.Field className='input-inverted' >
-          <input placeholder='Placeholder' />
+        <Form.Field>
+          <Input transparent placeholder='Placeholder' />
         </Form.Field>
-        <Form.Field className='input-inverted'>
-          <input placeholder='Placeholder' />
+        <Form.Field>
+          <Input transparent placeholder='Placeholder' />
+        </Form.Field>
+        <Form.Field>
+          <Dropdown className='inverted' placeholder='Placeholder' search selection options={sampleDropdownOptions} />
+        </Form.Field>
+        <Form.Field>
+          <Checkbox className='inverted' label='Checkbox' />
         </Form.Field>
       </Form>
     </Segment>
@@ -105,11 +128,17 @@ storiesOf('Form', module)
   .add('inverted error', () => <div style={{ width: '300px' }}>
     <Segment inverted>
       <Form inverted>
-        <Form.Field className='input-inverted error' error>
-          <input placeholder='Placeholder' />
+        <Form.Field error>
+          <Input transparent placeholder='Placeholder' />
         </Form.Field>
-        <Form.Field className='input-inverted error' error>
-          <input placeholder='Placeholder' />
+        <Form.Field error>
+          <Input transparent placeholder='Placeholder' />
+        </Form.Field>
+        <Form.Field>
+          <Dropdown className='inverted error' placeholder='Placeholder' search selection options={sampleDropdownOptions} />
+        </Form.Field>
+        <Form.Field error>
+          <Checkbox className='inverted' label='Checkbox' />
         </Form.Field>
       </Form>
     </Segment>
@@ -155,19 +184,19 @@ storiesOf('Menu', module)
 
 storiesOf('Dropdown', module)
   .add('normal', () => <Segment>
-    <Dropdown search selection options={[]} />
+    <Dropdown search selection options={sampleDropdownOptions} />
 </Segment>)
 
 storiesOf('Form with Dropdown', module)
   .add('normal', () => <Segment>
     <Form>
-      <Form.Dropdown search selection />
+      <Form.Dropdown search selection options={sampleDropdownOptions} />
       <Form.Input />
     </Form>
 </Segment>)
   .add('mini', () => <Segment>
     <Form size='mini'>
-      <Form.Dropdown search selection />
+      <Form.Dropdown search selection options={sampleDropdownOptions} />
       <Form.Input />
     </Form>
 </Segment>)

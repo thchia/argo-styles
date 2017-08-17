@@ -1,3 +1,18 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.transparent.input {
+  background-color: @black;
+  padding: (@verticalPadding - @lineHeightOffset) @horizontalPadding;
+  border: @borderWidth solid @borderColor;
+  border-radius: @defaultBorderRadius;
+}
+
+.ui.form {
+  .field.error {
+    .transparent.input {
+      border-color: @red;
+    }
+  }
+}

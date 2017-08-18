@@ -23,8 +23,8 @@
   color: @white;
 }
 
-.ui.checkbox input:focus~.box:before,
-.ui.checkbox input:focus~label:before {
+.ui.checkbox.inverted input:focus~.box:before,
+.ui.checkbox.inverted input:focus~label:before {
   background: @black;
 }
 

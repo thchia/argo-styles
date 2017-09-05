@@ -4,6 +4,8 @@ import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
 
+import ParaLoader from '../src/ParaLoader'
+
 import { Button, Checkbox, Dropdown, Form, Grid, Input, Menu, Message, Segment, TextArea } from 'semantic-ui-react'
 
 // import './styles.css'
@@ -87,6 +89,9 @@ storiesOf('Form', module)
         <Dropdown placeholder='Placeholder' search selection options={sampleDropdownOptions} />
       </Form.Field>
       <Form.Field>
+        <Dropdown placeholder='Placeholder' search selection options={[]} noResultsMessage='Type to Search' />
+      </Form.Field>
+      <Form.Field>
         <Checkbox label='Checkbox' />
       </Form.Field>
       <Form.Field>
@@ -104,6 +109,9 @@ storiesOf('Form', module)
       </Form.Field>
       <Form.Field error>
         <Dropdown placeholder='Placeholder' search selection options={sampleDropdownOptions} />
+      </Form.Field>
+      <Form.Field error>
+        <Dropdown placeholder='Placeholder' search selection options={[]} noResultsMessage='Type to search' />
       </Form.Field>
       <Form.Field error>
         <Checkbox label='Checkbox' />
@@ -126,6 +134,9 @@ storiesOf('Form', module)
           <Dropdown className='inverted' placeholder='Placeholder' search selection options={sampleDropdownOptions} />
         </Form.Field>
         <Form.Field>
+          <Dropdown className='inverted' placeholder='Placeholder' search selection options={[]} noResultsMessage='Type to search' />
+        </Form.Field>
+        <Form.Field>
           <Checkbox className='inverted' label='Checkbox' />
         </Form.Field>
         <Form.Field>
@@ -145,6 +156,9 @@ storiesOf('Form', module)
         </Form.Field>
         <Form.Field>
           <Dropdown className='inverted error' placeholder='Placeholder' search selection options={sampleDropdownOptions} />
+        </Form.Field>
+        <Form.Field>
+          <Dropdown className='inverted error' placeholder='Placeholder' search selection options={[]} noResultsMessage='Type to search' />
         </Form.Field>
         <Form.Field error>
           <Checkbox className='inverted' label='Checkbox' />
@@ -212,6 +226,12 @@ storiesOf('Form with Dropdown', module)
       <Form.Input />
     </Form>
 </Segment>)
+  .add('No Results Message', () => <Segment>
+  <Form size='mini'>
+    <Form.Dropdown search selection options={[]} noResultsMessage='Type to search' />
+    <Form.Input />
+  </Form>
+</Segment>)
 
 storiesOf('Grid', module)
   .add('compact', () => <Segment>
@@ -229,4 +249,33 @@ storiesOf('Grid', module)
         <Grid.Column>Value</Grid.Column>
       </Grid.Row>
     </Grid>
+</Segment>)
+
+storiesOf('Paragraph Loader', module)
+  .add('normal', () => <Segment>
+    <ParaLoader />
+</Segment>)
+  .add('mini', () => <Segment>
+    <ParaLoader size='mini' />
+</Segment>)
+  .add('small', () => <Segment>
+    <ParaLoader size='small' />
+</Segment>)
+  .add('large', () => <Segment>
+    <ParaLoader size='large' />
+</Segment>)
+  .add('big', () => <Segment>
+    <ParaLoader size='big' />
+</Segment>)
+  .add('huge', () => <Segment>
+    <ParaLoader size='huge' />
+</Segment>)
+  .add('massive', () => <Segment>
+    <ParaLoader size='massive' />
+</Segment>)
+  .add('fluid', () => <Segment>
+  <ParaLoader fluid />
+</Segment>)
+  .add('inverted', () => <Segment inverted>
+  <ParaLoader size='mini' />
 </Segment>)

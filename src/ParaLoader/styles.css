@@ -1,0 +1,41 @@
+.para-loader {
+  border-radius: 4px;
+  min-height: 38px;
+  max-width: 200px;
+  background-color: lightgrey;
+  animation: pulseColour 2s infinite;
+}
+
+.fluid {
+  max-width: 100%;
+}
+
+.mini {
+  min-height: 30px;
+}
+
+.small {
+  min-height: 35px;
+}
+
+.large {
+  min-height: 43px;
+}
+
+.big {
+  min-height: 47px;
+}
+
+.huge {
+  min-height: 53px;
+}
+
+.massive {
+  min-height: 64px;
+}
+
+@keyframes pulseColour {
+  0% { background-color: lightgrey }
+  50% { background-color: #C5C5C5 }
+  100% { background-color: lightgrey }
+}

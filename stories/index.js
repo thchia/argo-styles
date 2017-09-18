@@ -15,7 +15,8 @@ const error = true
 const sampleDropdownOptions = [
   { key: '1', text: 'First', value: 'First' },
   { key: '2', text: 'Second', value: 'Second' },
-  { key: '3', text: 'Third', value: 'Third' }
+  { key: '3', text: 'Third', value: 'Third' },
+  { key: '4', text: 'Super long long super long Super long long super long', value: 'Third' }
 ]
 
 storiesOf('Button', module)
@@ -91,8 +92,14 @@ storiesOf('Form', module)
       <Form.Field>
         <Dropdown placeholder='Placeholder' search selection options={[]} noResultsMessage='Type to Search' />
       </Form.Field>
+      <Form.Field inline>
+        <Dropdown placeholder='Placeholder' fluid search selection options={sampleDropdownOptions} noResultsMessage='Type to Search' />
+      </Form.Field>
       <Form.Field>
         <Checkbox label='Checkbox' />
+      </Form.Field>
+      <Form.Field>
+        <Checkbox radio label='Radio' />
       </Form.Field>
       <Form.Field>
         <TextArea placeholder='Placeholder' />
@@ -117,6 +124,9 @@ storiesOf('Form', module)
         <Checkbox label='Checkbox' />
       </Form.Field>
       <Form.Field error>
+        <Checkbox radio label='Radio' />
+      </Form.Field>
+      <Form.Field error>
         <TextArea placeholder='Placeholder' />
       </Form.Field>
     </Form>
@@ -138,6 +148,12 @@ storiesOf('Form', module)
         </Form.Field>
         <Form.Field>
           <Checkbox className='inverted' label='Checkbox' />
+        </Form.Field>
+        <Form.Field>
+          <Checkbox radio className='inverted' label='Radio' />
+        </Form.Field>
+        <Form.Field>
+          <Checkbox radio className='inverted' label='Radio' />
         </Form.Field>
         <Form.Field>
           <TextArea style={{ backgroundColor: '#1b1c1d', color: 'white' }} placeholder='Placeholder' />

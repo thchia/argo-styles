@@ -7,6 +7,7 @@ import { linkTo } from '@storybook/addon-links';
 import ParaLoader from '../src/ParaLoader'
 
 import { Button, Checkbox, Dropdown, Form, Grid, Input, Menu, Message, Segment, TextArea } from 'semantic-ui-react'
+import ArgomiLoading from '../src/Logo'
 
 // import './styles.css'
 import '../semantic/dist/semantic.min.css'
@@ -295,3 +296,8 @@ storiesOf('Paragraph Loader', module)
   .add('inverted', () => <Segment inverted>
   <ParaLoader size='mini' />
 </Segment>)
+
+storiesOf('Loader', module)
+  .add('logo', () => <div>
+    <ArgomiLoading />
+  </div>)

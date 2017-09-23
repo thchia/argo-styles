@@ -1,0 +1,59 @@
+.argomi-logo-container {
+  display: flex;
+  justify-content: space-between;
+  width: 80px;
+  height: 80px;
+  padding: 10px 5px;
+}
+
+.argomi-logo-col {
+  flex: 1;
+  max-width: 9px;
+  background-color: #95bc49;
+  border-radius: 4.5px;
+  backface-visibility: hidden;
+  animation-duration: 1.7s;
+  animation-name: bubble;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bubble {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.argomi-logo-col-1 {
+  height: 55px;
+  margin-top: 5px;
+}
+
+.argomi-logo-col-2 {
+  height: 26px;
+  margin-top: 20px;
+  animation-delay: 0.15s;
+}
+
+.argomi-logo-col-3 {
+  height: 26px;
+  margin-top: 27px;
+  animation-delay: 0.3s;
+}
+
+.argomi-logo-col-4 {
+  height: 35px;
+  margin-top: 10px; 
+  animation-delay: 0.45s;
+}
+
+.argomi-logo-col-5 {
+  animation-delay: 0.6s;
+}

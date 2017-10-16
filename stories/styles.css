@@ -1,4 +1,4 @@
-.input-inverted input {
+/* .input-inverted input {
   background: black !important;
   color: white !important;
 }
@@ -6,4 +6,35 @@
 .input-inverted.error input {
   border: solid 1px #bd0000 !important;
   color: #ff4a4a !important;
+} */
+
+.ReactTable {
+  border: none;
+}
+
+.ReactTable .rt-thead.-header {
+  box-shadow: none;
+  background-color: rgba(150, 188, 73, 0.5);
+  border-radius: 4px;
+}
+
+.ReactTable .rt-thead.-filters,
+.ReactTable .rt-tbody .rt-tr-group {
+  border-bottom: none;
+}
+
+.ReactTable .rt-tr {
+  border-radius: 4px;
+}
+
+.ReactTable .-pagination {
+  background-color: #ffffff;
+  box-shadow: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.ReactTable .rt-tbody .rt-td {
+  display: flex;
+  align-items: center;
+  border-right: none;
 }

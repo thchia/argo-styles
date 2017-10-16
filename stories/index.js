@@ -21,6 +21,7 @@ import {
   Segment,
   TextArea
 } from 'semantic-ui-react'
+import ArgomiLoading from '../src/Logo'
 
 import './styles.css'
 import '../semantic/dist/semantic.min.css'
@@ -462,6 +463,12 @@ storiesOf('Paragraph Loader', module)
       <ParaLoader size="mini" />
     </Segment>
   ))
+
+storiesOf('Loader', module).add('logo', () => (
+  <div>
+    <ArgomiLoading />
+  </div>
+))
 
 storiesOf('React Table', module).add('normal', () => {
   Object.assign(ReactTableDefaults, {

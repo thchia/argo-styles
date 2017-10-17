@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions'
 import { linkTo } from '@storybook/addon-links'
 
 import ParaLoader from '../src/ParaLoader'
+import ReactTablePagination from '../src/ReactTableOverrides/pagination'
 import data, { columns } from './tableData'
 import 'react-table/react-table.css'
 
@@ -470,37 +471,75 @@ storiesOf('Loader', module).add('logo', () => (
   </div>
 ))
 
-storiesOf('React Table', module).add('normal', () => {
-  Object.assign(ReactTableDefaults, {
-    column: {
-      ...ReactTableDefaults.column,
-      Cell: props => (
-        <div style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
-          {props.value}
-        </div>
-      )
-    }
-  })
-  const tableColumns = [
-    ...columns,
-    {
-      Header: 'Action',
-      Cell: props => (
-        <Button compact size="tiny">
-          Click
-        </Button>
-      )
-    }
-  ]
-  return (
-    <div style={{ padding: '10%', margin: 'auto' }}>
-      <ReactTable
-        filterable
-        FilterComponent={props => <Input size="mini" icon="search" fluid />}
-        className="-striped -highlight"
-        columns={tableColumns}
-        data={data}
-      />
-    </div>
-  )
+Object.assign(ReactTableDefaults, {
+  column: {
+    ...ReactTableDefaults.column,
+    Cell: props => (
+      <div style={{ overflow: 'hidden', textOverflow: 'ellipsis' }}>
+        {props.value}
+      </div>
+    )
+  }
 })
+
+storiesOf('React Table', module)
+  .add('normal', () => {
+    const tableColumns = [
+      ...columns,
+      {
+        Header: 'Action',
+        Cell: props => (
+          <Button compact size="tiny">
+            Click
+          </Button>
+        )
+      }
+    ]
+    return (
+      <div style={{ padding: '10%', margin: 'auto' }}>
+        <ReactTable
+          filterable
+          FilterComponent={props => <Input size="mini" icon="search" fluid />}
+          className="-striped -highlight"
+          columns={tableColumns}
+          data={data}
+        />
+      </div>
+    )
+  })
+  .add('subcomponent', () => {
+    return (
+      <div style={{ padding: '10%', margin: 'auto' }}>
+        <ReactTable
+          filterable
+          FilterComponent={props => <Input size="mini" icon="search" fluid />}
+          className="-striped -highlight"
+          columns={columns}
+          data={data}
+          SubComponent={props => <div>Sub Component</div>}
+          PaginationComponent={ReactTablePagination()}
+        />
+      </div>
+    )
+  })
+  .add('dark', () => {
+    return (
+      <Segment basic inverted>
+        <div style={{ padding: '10%', margin: 'auto' }}>
+          <ReactTable
+            filterable
+            FilterComponent={props => (
+              <Form inverted>
+                <Form.Input size="mini" fluid transparent />
+              </Form>
+            )}
+            className="-striped -highlight"
+            columns={columns}
+            data={data}
+            SubComponent={props => <div>Sub Component</div>}
+            PaginationComponent={ReactTablePagination(true)}
+          />
+        </div>
+      </Segment>
+    )
+  })

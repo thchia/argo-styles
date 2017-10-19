@@ -1,3 +1,25 @@
 /*******************************
          Theme Overrides
 *******************************/
+
+.ui.pointing.secondary.menu {
+  border: none;
+  a.item {
+    border-bottom: solid 3px @borderColor;
+  }
+  a.item:hover {
+    color: @green;
+  }
+}
+
+.inverted {
+  .ui.pointing.secondary.menu {
+    a.item {
+      border-bottom: solid 3px #323334;
+      color: white;
+    }
+    a.item:hover {
+      color: @green;
+    }
+  }
+}

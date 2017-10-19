@@ -343,7 +343,7 @@ storiesOf('Menu', module)
   ))
   .add('pointing secondary normal', () => (
     <Segment>
-      <Menu pointing secondary>
+      <Menu pointing secondary color="green">
         <Menu.Item as="a" active>
           Item 1
         </Menu.Item>
@@ -353,7 +353,7 @@ storiesOf('Menu', module)
   ))
   .add('pointing secondary inverted', () => (
     <Segment inverted>
-      <Menu pointing secondary inverted>
+      <Menu pointing secondary color="green">
         <Menu.Item as="a" active>
           Item 1
         </Menu.Item>

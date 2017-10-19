@@ -28,11 +28,11 @@
     "upload:css":
       "s3-cli put --config=.s3cfg --region=ap-southeast-1 --acl-public semantic/dist/semantic.min.css s3://argomi-static-assets/stylesheets/argomi.min.css",
     "upload:icons:prod":
-      "s3-cli sync --delete-removed --config=.s3cfg --region=ap-southeast-1 --acl-public semantic/dist/themes/default/assets/fonts s3://argomi-static-assets/stylesheets/themes/default/assets/fonts",
+      "s3-cli --config .s3cfg.prod sync --delete-removed --config=.s3cfg --region=ap-southeast-1 --acl-public semantic/dist/themes/default/assets/fonts s3://argomi-static-assets/stylesheets/themes/default/assets/fonts",
     "upload:flags:prod":
-      "s3-cli sync --delete-removed --config=.s3cfg --region=ap-southeast-1 --acl-public semantic/dist/themes/default/assets/images s3://argomi-static-assets/stylesheets/themes/default/assets/images",
+      "s3-cli --config .s3cfg.prod sync --delete-removed --config=.s3cfg --region=ap-southeast-1 --acl-public semantic/dist/themes/default/assets/images s3://argomi-static-assets/stylesheets/themes/default/assets/images",
     "upload:css:prod":
-      "s3-cli put --config=.s3cfg --region=ap-southeast-1 --acl-public semantic/dist/semantic.min.css s3://argomi-static-assets/stylesheets/argomi.min.css"
+      "s3-cli --config .s3cfg.prod put --config=.s3cfg --region=ap-southeast-1 --acl-public semantic/dist/semantic.min.css s3://argomi-static-assets/stylesheets/argomi.min.css"
   },
   "devDependencies": {
     "@storybook/react": "^3.1.9"

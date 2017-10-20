@@ -6,6 +6,9 @@
   background-color: @black;
   border: @borderWidth solid @borderColor;
   border-radius: @defaultBorderRadius;
+  ::selection {
+    color: lightGrey;
+  }
 }
 
 .ui.transparent.labeled .ui.label {

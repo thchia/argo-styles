@@ -1,3 +1,7 @@
 /*******************************
         Global Overrides
 *******************************/
+
+.ui.inverted.form textarea::selection {
+        color: lightGrey;
+}

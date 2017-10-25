@@ -3,5 +3,11 @@
 *******************************/
 
 .ui.inverted.form textarea::selection {
-        color: lightGrey;
+  color: lightGrey;
+}
+
+body *:focus {
+  outline: 2px solid #7AACFE !important;
+  outline: 3px auto -webkit-focus-ring-color !important;
+  outline-offset: 0.5px;
 }
